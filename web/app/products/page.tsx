@@ -1,41 +1,47 @@
-import Link from 'next/link'
+import { Badge } from '@/app/components/ui/badge'
+import { ButtonLink } from '@/app/components/ui/button'
+import { Card, CardContent } from '@/app/components/ui/card'
+import { ProductCard } from '@/app/components/product-card'
 import { apiGet } from '@/lib/api'
-
-type Item = { source_id: string; title: string; description?: string; category?: string; price?: number; image_url?: string }
+import type { ProductItem } from '@/lib/products'
 
 export default async function ProductsPage() {
-  const data = await apiGet<{ items: Item[] }>('/products?limit=100')
+  const data = await apiGet<{ items: ProductItem[] }>('/products?limit=100')
+  const products = data.items.slice(0, 12)
 
   return (
-    <main className="container">
-      <nav className="nav">
-        <div>
-          <div className="section-label">PRODUCT LIST</div>
-          <h1 style={{ margin: 0, fontSize: 44 }}>商品列表</h1>
-          <p style={{ color: '#6b7280' }}>精選耳機與音訊設備，點進去看商品詳情。</p>
+    <main className="page-shell">
+      <nav className="topbar">
+        <div className="page-title-block">
+          <p className="eyebrow">Product List</p>
+          <h1 className="section-title section-title-large">商品列表</h1>
+          <p className="section-intro">精選耳機與音訊設備，點進去看商品詳情。</p>
         </div>
-        <Link className="pill" href="/">回首頁</Link>
+        <div className="topbar-actions">
+          <Badge tone="accent">{products.length} items</Badge>
+          <ButtonLink href="/" variant="outline" size="sm">
+            回首頁
+          </ButtonLink>
+        </div>
       </nav>
 
-      <section className="grid-3">
-        {data.items.slice(0, 12).map((p) => (
-          <article key={p.source_id} className="card">
-            <div className="product-image">
-              {p.image_url ? <img src={p.image_url} alt={p.title} /> : <span>no image</span>}
+      <section className="section-block section-block-tight">
+        <Card className="collection-banner">
+          <CardContent className="collection-banner-content">
+            <div>
+              <p className="eyebrow">Collection</p>
+              <h2 className="feature-title">A cleaner catalog surface with the same backend behavior.</h2>
             </div>
-            <div className="card-body">
-              <h3>{p.title}</h3>
-              <p>{p.description || 'No description available.'}</p>
-              <div className="badges">
-                {p.category ? <span className="badge">{p.category}</span> : null}
-                <span className="badge">⭐ 4.{Math.floor(Math.random() * 9)}</span>
-              </div>
-              <div className="actions" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
-                <div className="price">{typeof p.price === 'number' ? `$${p.price}` : '--'}</div>
-                <Link className="btn primary" href={`/products/id/${p.source_id}`}>查看詳情</Link>
-              </div>
-            </div>
-          </article>
+            <p className="feature-copy">
+              Product cards remain wired to the existing detail route using source ids.
+            </p>
+          </CardContent>
+        </Card>
+      </section>
+
+      <section className="catalog-grid">
+        {products.map((product) => (
+          <ProductCard key={product.source_id} product={product} priorityLabel="In stock" />
         ))}
       </section>
     </main>

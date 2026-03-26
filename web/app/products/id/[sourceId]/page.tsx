@@ -1,51 +1,80 @@
-import Link from 'next/link'
+import { Badge } from '@/app/components/ui/badge'
+import { Button, ButtonLink } from '@/app/components/ui/button'
+import { Card, CardContent } from '@/app/components/ui/card'
 import { apiGet } from '@/lib/api'
-
-type Item = {
-  source_id: string
-  title: string
-  description?: string
-  category?: string
-  price?: number | string
-  image_url?: string
-  raw?: { brand?: string }
-}
+import { formatPrice, getProductHighlights, ratingFromId, slugifyProductTitle, type ProductItem } from '@/lib/products'
 
 export default async function ProductDetail({ params }: { params: { sourceId: string } }) {
-  const item = await apiGet<Item>(`/products/${params.sourceId}`)
+  const item = await apiGet<ProductItem>(`/products/${params.sourceId}`)
   const brand = item.raw?.brand || 'APPLE'
+  const highlights = getProductHighlights(item)
+  const rating = ratingFromId(item.source_id)
 
   return (
-    <main className="container">
-      <nav className="nav">
-        <Link className="pill" href="/products">← 回商品列表</Link>
-        <Link className="pill" href="/">回首頁</Link>
+    <main className="page-shell">
+      <nav className="topbar">
+        <div className="topbar-actions">
+          <ButtonLink href="/products" variant="outline" size="sm">
+            ← 回商品列表
+          </ButtonLink>
+          <ButtonLink href="/" variant="ghost" size="sm">
+            回首頁
+          </ButtonLink>
+        </div>
+        <ButtonLink href={`/products/${slugifyProductTitle(item.title)}`} variant="ghost" size="sm">
+          Canonical slug
+        </ButtonLink>
       </nav>
 
-      <section className="detail-grid">
-        <div className="detail-media">
-          {item.image_url ? <img src={item.image_url} alt={item.title} /> : <span>no image</span>}
-        </div>
-        <div className="detail-info">
-          <div className="section-label" style={{ color: '#b45309' }}>{brand}</div>
-          <h1 style={{ marginTop: 0, fontSize: 44 }}>{item.title}</h1>
-          <p style={{ color: '#4b5563', fontSize: 24 }}>{item.description || 'No description available.'}</p>
-          <div className="badges">
-            {item.category ? <span className="badge">{item.category}</span> : null}
-            <span className="badge">⭐ 3.47</span>
+      <section className="product-detail-layout">
+        <Card className="product-detail-media-card">
+          <CardContent className="product-detail-media-content">
+            <div className="product-detail-media">
+              {item.image_url ? (
+                <img src={item.image_url} alt={item.title} className="product-detail-image" />
+              ) : (
+                <span className="product-media-fallback">No image</span>
+              )}
+            </div>
+          </CardContent>
+        </Card>
+
+        <div className="product-detail-copy">
+          <div className="detail-heading">
+            <p className="eyebrow">{brand}</p>
+            <h1 className="display-title detail-title">{item.title}</h1>
+            <p className="lead-copy detail-copy">
+              {item.description || 'No description available.'}
+            </p>
           </div>
-          <div className="price">{item.price !== undefined && item.price !== null ? `$${item.price}` : '--'}</div>
 
-          <h3 style={{ marginBottom: 8, marginTop: 16, fontSize: 30 }}>產品亮點</h3>
-          <ul style={{ marginTop: 0, color: '#4b5563', lineHeight: 1.7, fontSize: 24 }}>
-            <li>Active Noise Cancellation</li>
-            <li>Spatial Audio</li>
-            <li>Premium build</li>
-          </ul>
+          <div className="pill-row">
+            {item.category ? <Badge>{item.category}</Badge> : null}
+            <Badge tone="muted">⭐ {rating}</Badge>
+            <Badge tone="accent">Source ID {item.source_id}</Badge>
+          </div>
 
-          <div className="actions">
-            <button className="btn primary">加入購物車</button>
-            <button className="btn">立即購買</button>
+          <div className="detail-price-row">
+            <div className="price-block">
+              <span className="price-caption">Price</span>
+              <span className="price-value">{formatPrice(item.price)}</span>
+            </div>
+          </div>
+
+          <Card className="detail-highlights">
+            <CardContent>
+              <p className="eyebrow">產品亮點</p>
+              <ul className="highlights-list">
+                {highlights.map((highlight) => (
+                  <li key={highlight}>{highlight}</li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+
+          <div className="detail-actions">
+            <Button>加入購物車</Button>
+            <Button variant="outline">立即購買</Button>
           </div>
         </div>
       </section>
