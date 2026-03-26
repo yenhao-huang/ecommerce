@@ -1,0 +1,73 @@
+{
+  "count": 3,
+  "items": [
+    {
+      "source": "dummyjson",
+      "source_id": "100",
+      "title": "Apple Airpods",
+      "description": "The Apple Airpods offer a seamless wireless audio experience. With easy pairing, high-quality sound, and Siri integration, they are perfect for on-the-go listening.",
+      "rating": 4.15,
+      "image_url": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/thumbnail.webp",
+      "metadata": {
+        "brand": "Apple",
+        "category": "mobile-accessories",
+        "price": 129.99,
+        "discountPercentage": 15.54,
+        "stock": 67,
+        "tags": [
+          "electronics",
+          "wireless earphones"
+        ],
+        "images": [
+          "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/1.webp",
+          "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/2.webp",
+          "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/3.webp"
+        ]
+      }
+    },
+    {
+      "source": "dummyjson",
+      "source_id": "101",
+      "title": "Apple AirPods Max Silver",
+      "description": "The Apple AirPods Max in Silver are premium over-ear headphones with high-fidelity audio, adaptive EQ, and active noise cancellation. Experience immersive sound in style.",
+      "rating": 3.47,
+      "image_url": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/thumbnail.webp",
+      "metadata": {
+        "brand": "Apple",
+        "category": "mobile-accessories",
+        "price": 549.99,
+        "discountPercentage": 13.67,
+        "stock": 59,
+        "tags": [
+          "electronics",
+          "over-ear headphones"
+        ],
+        "images": [
+          "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/1.webp"
+        ]
+      }
+    },
+    {
+      "source": "dummyjson",
+      "source_id": "107",
+      "title": "Beats Flex Wireless Earphones",
+      "description": "The Beats Flex Wireless Earphones offer a comfortable and versatile audio experience. With magnetic earbuds and up to 12 hours of battery life, they are ideal for everyday use.",
+      "rating": 4.24,
+      "image_url": "https://cdn.dummyjson.com/product-images/mobile-accessories/beats-flex-wireless-earphones/thumbnail.webp",
+      "metadata": {
+        "brand": "Beats",
+        "category": "mobile-accessories",
+        "price": 49.99,
+        "discountPercentage": 5.73,
+        "stock": 50,
+        "tags": [
+          "electronics",
+          "wireless earphones"
+        ],
+        "images": [
+          "https://cdn.dummyjson.com/product-images/mobile-accessories/beats-flex-wireless-earphones/1.webp"
+        ]
+      }
+    }
+  ]
+}

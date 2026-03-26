@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: headphone-ecommerce
+Version: 0.1.0
+Summary: Headphone e-commerce retrieval system with PostgreSQL JSONB + pgvector
+Requires-Python: >=3.10
+Requires-Dist: fastapi>=0.115.0
+Requires-Dist: uvicorn[standard]>=0.30.0
+Requires-Dist: psycopg[binary]>=3.2.0
+Requires-Dist: pgvector>=0.3.3
+Requires-Dist: requests>=2.32.0
+Requires-Dist: python-dotenv>=1.0.1
+Requires-Dist: sentence-transformers>=3.0.1
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0.0; extra == "dev"
+Requires-Dist: ruff>=0.5.0; extra == "dev"

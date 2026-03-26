@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+setup.py
+headphone_ecommerce.egg-info/PKG-INFO
+headphone_ecommerce.egg-info/SOURCES.txt
+headphone_ecommerce.egg-info/dependency_links.txt
+headphone_ecommerce.egg-info/requires.txt
+headphone_ecommerce.egg-info/top_level.txt
