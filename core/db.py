@@ -36,6 +36,13 @@ def init_db() -> None:
             );
             """
         )
+        # lightweight migration for older schema
+        cur.execute("ALTER TABLE products ADD COLUMN IF NOT EXISTS slug TEXT;")
+        cur.execute("ALTER TABLE products ADD COLUMN IF NOT EXISTS description TEXT;")
+        cur.execute("ALTER TABLE products ADD COLUMN IF NOT EXISTS category TEXT;")
+        cur.execute("ALTER TABLE products ADD COLUMN IF NOT EXISTS price NUMERIC;")
+        cur.execute("ALTER TABLE products ADD COLUMN IF NOT EXISTS image_url TEXT;")
+        cur.execute("ALTER TABLE products ADD COLUMN IF NOT EXISTS metadata JSONB DEFAULT '{}'::jsonb;")
         conn.commit()
 
 
