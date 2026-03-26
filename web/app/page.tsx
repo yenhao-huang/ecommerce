@@ -54,7 +54,7 @@ export default function HomePage() {
         </div>
         <div className="topbar-actions">
           <ButtonLink href="/products" variant="outline" size="sm">
-            商品列表
+            Product List
           </ButtonLink>
           <a className="ui-button ui-button-ghost ui-button-sm" href="#search">
             Explore Search
@@ -151,7 +151,7 @@ export default function HomePage() {
 
         <div className="section-actions">
           <ButtonLink href="/products" variant="outline">
-            商品列表
+            Product List
           </ButtonLink>
         </div>
       </section>

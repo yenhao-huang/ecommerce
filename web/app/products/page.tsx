@@ -14,13 +14,13 @@ export default async function ProductsPage() {
       <nav className="topbar">
         <div className="page-title-block">
           <p className="eyebrow">Product List</p>
-          <h1 className="section-title section-title-large">商品列表</h1>
-          <p className="section-intro">精選耳機與音訊設備，點進去看商品詳情。</p>
+          <h1 className="section-title section-title-large">Product List</h1>
+          <p className="section-intro">Curated headphones and audio gear. Tap through for product details.</p>
         </div>
         <div className="topbar-actions">
           <Badge tone="accent">{products.length} items</Badge>
           <ButtonLink href="/" variant="outline" size="sm">
-            回首頁
+            Back Home
           </ButtonLink>
         </div>
       </nav>

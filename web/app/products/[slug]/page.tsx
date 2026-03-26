@@ -27,7 +27,7 @@ export default async function SlugPage({ params }: { params: { slug: string } })
             <div className="topbar-actions">
               {product ? <Badge tone="accent">Matched product</Badge> : <Badge tone="muted">No match</Badge>}
               <ButtonLink href={product ? `/products/id/${product.source_id}` : '/products'} variant="outline">
-                {product ? '查看詳情' : 'Back to Product List'}
+                {product ? 'View Details' : 'Back to Product List'}
               </ButtonLink>
             </div>
           </CardContent>

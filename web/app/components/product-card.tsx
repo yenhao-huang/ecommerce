@@ -42,7 +42,7 @@ export function ProductCard({ product, priorityLabel }: ProductCardProps) {
           <span className="price-value">{formatPrice(product.price)}</span>
         </div>
         <ButtonLink href={`/products/id/${product.source_id}`} size="sm">
-          查看詳情
+          View Details
         </ButtonLink>
       </CardFooter>
     </Card>

@@ -15,10 +15,10 @@ export default async function ProductDetail({ params }: { params: { sourceId: st
       <nav className="topbar">
         <div className="topbar-actions">
           <ButtonLink href="/products" variant="outline" size="sm">
-            ← 回商品列表
+            ← Back to Product List
           </ButtonLink>
           <ButtonLink href="/" variant="ghost" size="sm">
-            回首頁
+            Back Home
           </ButtonLink>
         </div>
         <ButtonLink href={`/products/${slugifyProductTitle(item.title)}`} variant="ghost" size="sm">
@@ -63,7 +63,7 @@ export default async function ProductDetail({ params }: { params: { sourceId: st
 
           <Card className="detail-highlights">
             <CardContent>
-              <p className="eyebrow">產品亮點</p>
+              <p className="eyebrow">Highlights</p>
               <ul className="highlights-list">
                 {highlights.map((highlight) => (
                   <li key={highlight}>{highlight}</li>
@@ -73,8 +73,8 @@ export default async function ProductDetail({ params }: { params: { sourceId: st
           </Card>
 
           <div className="detail-actions">
-            <Button>加入購物車</Button>
-            <Button variant="outline">立即購買</Button>
+            <Button>Add to Cart</Button>
+            <Button variant="outline">Buy Now</Button>
           </div>
         </div>
       </section>
