@@ -141,21 +141,21 @@ code {
 
 .display-title {
   max-width: 10ch;
-  font-size: clamp(3.4rem, 7vw, 5.9rem);
+  font-size: clamp(4.4rem, 9vw, 7.2rem);
 }
 
 .section-title {
-  font-size: clamp(2rem, 3.2vw, 3.25rem);
+  font-size: clamp(2.3rem, 4vw, 3.8rem);
 }
 
 .section-title-large {
-  font-size: clamp(2.8rem, 4vw, 4.2rem);
+  font-size: clamp(3.4rem, 5vw, 5.2rem);
 }
 
 .lead-copy {
   max-width: 60ch;
   margin-top: 18px;
-  font-size: 1.08rem;
+  font-size: 1.2rem;
 }
 
 .hero-panel,
@@ -416,7 +416,7 @@ code {
 
 .feature-title {
   margin: 8px 0 10px;
-  font-size: 2rem;
+  font-size: 2.35rem;
 }
 
 .product-card {
@@ -461,7 +461,7 @@ code {
 }
 
 .product-card-title {
-  font-size: 1.85rem;
+  font-size: 2.2rem;
 }
 
 .product-card-description {
@@ -491,7 +491,7 @@ code {
 
 .price-value,
 .price-inline {
-  font-size: 1.7rem;
+  font-size: 2rem;
   line-height: 1;
 }
 
@@ -563,7 +563,7 @@ code {
   margin: 0;
   line-height: 1.08;
   letter-spacing: -0.03em;
-  font-size: clamp(2rem, 3.3vw, 3.1rem);
+  font-size: clamp(2.8rem, 4.4vw, 4.2rem);
 }
 
 .detail-copy {
@@ -651,6 +651,11 @@ code {
 
   .display-title,
   .detail-title {
-    font-size: 2.8rem;
+    font-size: 3.2rem;
+  }
+
+  .section-title,
+  .detail-shell-title {
+    font-size: 2.4rem;
   }
 }
