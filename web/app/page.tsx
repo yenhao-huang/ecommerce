@@ -49,7 +49,7 @@ export default function HomePage() {
           <div className="brand-mark">HA</div>
           <div>
             <p className="brand-kicker">3C Audio Store</p>
-            <p className="brand-subtitle">智慧比價、規格透明、快速找到最適合你的耳機</p>
+            <p className="brand-subtitle">Smart pricing, transparent specs, and faster headphone decisions.</p>
           </div>
         </div>
         <div className="topbar-actions">
@@ -64,46 +64,46 @@ export default function HomePage() {
 
       <section className="hero-panel">
         <div className="hero-copy">
-          <p className="eyebrow">熱門 3C 音訊裝置</p>
-          <h1 className="display-title">一次比規格、比價格、比評價，快速選對耳機。</h1>
+          <p className="eyebrow">Top 3C Audio Devices</p>
+          <h1 className="display-title">Compare specs, pricing, and ratings in one place.</h1>
           <p className="lead-copy">
-            從通勤降噪、電競語音到錄音監聽，一站式搜尋全站商品。
-            直接查看關鍵規格、價格帶與商品亮點，省下反覆比對時間。
+            From commute ANC and gaming voice chat to studio monitoring, search the full catalog in seconds.
+            Review key specs, price ranges, and buying highlights without tab-hopping.
           </p>
           <div className="hero-actions">
             <a className="ui-button ui-button-default" href="#search">
-              立即搜尋最適合的耳機
+              Find My Best Match
             </a>
             <a className="ui-button ui-button-outline" href="#editorial">
-              查看本週熱銷推薦
+              View Weekly Best Sellers
             </a>
           </div>
           <div className="pill-row">
-            <Badge>降噪耳機</Badge>
-            <Badge>電競耳麥</Badge>
-            <Badge>監聽耳機</Badge>
-            <Badge>藍牙通勤</Badge>
+            <Badge>Noise-Canceling</Badge>
+            <Badge>Gaming Headsets</Badge>
+            <Badge>Studio Monitoring</Badge>
+            <Badge>Bluetooth Commuting</Badge>
           </div>
         </div>
 
         <aside className="editorial-note">
-          <p className="eyebrow editorial-note-label">即時商品搜尋</p>
-          <h2 className="editorial-note-title">3 秒鎖定符合需求的 3C 耳機方案。</h2>
+          <p className="eyebrow editorial-note-label">Live Product Search</p>
+          <h2 className="editorial-note-title">Find the right 3C headset setup in seconds.</h2>
           <p className="editorial-note-copy">
-            輸入品牌、用途或預算，即可快速篩出對應商品，並串接後端 <code>/search</code> 即時結果。
+            Enter brand, use case, or budget to instantly surface relevant products from the backend <code>/search</code> endpoint.
           </p>
           <div className="note-metrics">
             <div>
               <span className="metric-value">127.0.0.1</span>
-              <span className="metric-label">本機 API</span>
+              <span className="metric-label">Local API</span>
             </div>
             <div>
-              <span className="metric-value">快速比對</span>
-              <span className="metric-label">保留完整商品路由</span>
+              <span className="metric-value">Fast Comparison</span>
+              <span className="metric-label">All product routes preserved</span>
             </div>
             <div>
-              <span className="metric-value">可重用元件</span>
-              <span className="metric-label">穩定擴充電商頁面</span>
+              <span className="metric-value">Reusable UI</span>
+              <span className="metric-label">Built to scale ecommerce pages</span>
             </div>
           </div>
         </aside>
@@ -112,11 +112,11 @@ export default function HomePage() {
       <section className="section-block" id="search">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">商品搜尋</p>
-            <h2 className="section-title">輸入需求，立即找到對應 3C 商品</h2>
+            <p className="eyebrow">Product Search</p>
+            <h2 className="section-title">Type your need, get matching 3C products instantly</h2>
           </div>
           <p className="section-intro">
-            即時連接 <code>http://127.0.0.1:8000/search?q=...&limit=6</code>，回傳最相關商品。
+            Live client-side fetch from <code>http://127.0.0.1:8000/search?q=...&limit=6</code> for top matching results.
           </p>
         </div>
 
@@ -125,24 +125,24 @@ export default function HomePage() {
             <div className="search-input-row">
               <Input value={q} onChange={(e) => setQ(e.target.value)} aria-label="Search products" />
               <Button onClick={runSearch} disabled={loading}>
-                {loading ? '搜尋中…' : '開始搜尋'}
+                {loading ? 'Searching…' : 'Search Now'}
               </Button>
             </div>
             <p className="search-caption">
-              可輸入品牌、用途、價位關鍵字（例如：Sony 降噪、電競耳機、3000 元內）。
+              Try brand + use-case + budget keywords (e.g. Sony ANC, gaming headset, under $120).
             </p>
 
             {items.length > 0 ? (
               <div className="catalog-grid">
                 {items.map((item) => (
-                  <ProductCard key={item.source_id} product={item} priorityLabel="即時結果" />
+                  <ProductCard key={item.source_id} product={item} priorityLabel="Live Result" />
                 ))}
               </div>
             ) : (
               <div className="search-empty-state">
-                <p className="search-empty-title">目前沒有符合商品</p>
+                <p className="search-empty-title">No matching products yet.</p>
                 <p className="search-empty-copy">
-                  試試更精準的關鍵字（品牌＋用途）以提升命中率。
+                  Try more specific keywords (brand + use case) to improve match quality.
                 </p>
               </div>
             )}
@@ -159,35 +159,35 @@ export default function HomePage() {
       <section className="section-block">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">熱門分類</p>
-            <h2 className="section-title">依使用情境快速選購</h2>
+            <p className="eyebrow">Popular Categories</p>
+            <h2 className="section-title">Shop by real-world use case</h2>
           </div>
         </div>
         <div className="feature-grid">
           <Card className="feature-card">
             <CardContent>
-              <p className="eyebrow">專業監聽</p>
-              <h3 className="feature-title">精準還原聲音細節，混音剪輯更可靠。</h3>
+              <p className="eyebrow">Studio Monitoring</p>
+              <h3 className="feature-title">Accurate detail retrieval for mixing and content production.</h3>
               <p className="feature-copy">
-                適合創作者與專業工作者，長時間配戴依然舒適。
+                Built for creators and professionals who need long-session comfort.
               </p>
             </CardContent>
           </Card>
           <Card className="feature-card">
             <CardContent>
-              <p className="eyebrow">通勤降噪</p>
-              <h3 className="feature-title">主動降噪加持，捷運街道也能沉浸聆聽。</h3>
+              <p className="eyebrow">Commute ANC</p>
+              <h3 className="feature-title">Active noise canceling for cleaner listening in busy streets.</h3>
               <p className="feature-copy">
-                兼顧續航、便攜與穩定連線，日常通勤首選。
+                Balanced battery life, portability, and stable wireless connectivity.
               </p>
             </CardContent>
           </Card>
           <Card className="feature-card">
             <CardContent>
-              <p className="eyebrow">遊戲娛樂</p>
-              <h3 className="feature-title">低延遲語音清晰，遊戲與追劇一次滿足。</h3>
+              <p className="eyebrow">Gaming & Media</p>
+              <h3 className="feature-title">Low-latency audio and clear voice pickup for competitive play.</h3>
               <p className="feature-copy">
-                支援多場景切換，工作會議到娛樂都能無縫銜接。
+                Switch seamlessly between meetings, gaming, and streaming.
               </p>
             </CardContent>
           </Card>
@@ -197,21 +197,21 @@ export default function HomePage() {
       <section className="section-block" id="editorial">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">熱銷精選</p>
-            <h2 className="section-title">本週人氣商品推薦</h2>
+            <p className="eyebrow">Best Sellers</p>
+            <h2 className="section-title">Weekly high-conversion picks</h2>
           </div>
         </div>
         <div className="feature-grid">
           {featured.map((feature) => (
             <Card key={feature.name} className="editorial-card">
               <CardContent className="editorial-card-content">
-                <p className="eyebrow">人氣推薦</p>
+                <p className="eyebrow">Top Pick</p>
                 <h3 className="feature-title">{feature.name}</h3>
                 <p className="feature-copy">{feature.desc}</p>
                 <div className="editorial-card-footer">
                   <span className="price-inline">{feature.price}</span>
                   <Button variant="outline" size="sm">
-                    查看推薦
+View Recommendation
                   </Button>
                 </div>
               </CardContent>

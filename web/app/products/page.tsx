@@ -13,12 +13,12 @@ export default async function ProductsPage() {
     <main className="page-shell">
       <nav className="topbar">
         <div className="page-title-block">
-          <p className="eyebrow">3C 商品列表</p>
-          <h1 className="section-title section-title-large">人氣耳機總覽</h1>
-          <p className="section-intro">精選耳機與音訊裝置，快速查看規格與價格，直接進入詳情頁。</p>
+          <p className="eyebrow">3C Product Catalog</p>
+          <h1 className="section-title section-title-large">Top-Rated Headphones</h1>
+          <p className="section-intro">Browse curated audio gear with fast access to specs, pricing, and detail pages.</p>
         </div>
         <div className="topbar-actions">
-          <Badge tone="accent">共 {products.length} 件商品</Badge>
+          <Badge tone="accent">{products.length} products</Badge>
           <ButtonLink href="/" variant="outline" size="sm">
             Back Home
           </ButtonLink>
@@ -29,11 +29,11 @@ export default async function ProductsPage() {
         <Card className="collection-banner">
           <CardContent className="collection-banner-content">
             <div>
-              <p className="eyebrow">熱門專區</p>
-              <h2 className="feature-title">高評價耳機一次看，從入門到旗艦完整覆蓋。</h2>
+              <p className="eyebrow">Featured Zone</p>
+              <h2 className="feature-title">From entry-level value picks to flagship premium models.</h2>
             </div>
             <p className="feature-copy">
-              商品卡片可直接進入詳情頁，快速比較規格、價格與使用情境。
+              Open product cards to compare specs, pricing, and fit-for-use in one flow.
             </p>
           </CardContent>
         </Card>
