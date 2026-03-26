@@ -27,7 +27,7 @@ const featured = [
 ]
 
 export default function HomePage() {
-  const [q, setQ] = useState('wireless noise canceling headphones')
+  const [q, setQ] = useState('apple')
   const [items, setItems] = useState<ProductItem[]>([])
   const [loading, setLoading] = useState(false)
 

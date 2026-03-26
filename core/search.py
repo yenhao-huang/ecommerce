@@ -20,6 +20,8 @@ def _load_products() -> list[dict[str, Any]]:
                 return data
             if isinstance(data, dict) and isinstance(data.get("products"), list):
                 return data["products"]
+            if isinstance(data, dict) and isinstance(data.get("items"), list):
+                return data["items"]
     return []
 
 
