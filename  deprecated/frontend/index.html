@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXUS Store</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="topbar">
+      <div class="logo">NEXUS</div>
+      <nav class="top-actions">
+        <button class="btn btn-ghost">收藏</button>
+        <button class="btn btn-ghost">購物車</button>
+        <button class="btn btn-primary">登入</button>
+      </nav>
+    </header>
+
+    <section class="hero card">
+      <span class="badge">✦ 2026 春季新品</span>
+      <h1>下一代科技，由你定義</h1>
+      <p>精選全球頂尖品牌 3C 產品，從耳機到筆電，每一件都是生活升級的起點。</p>
+      <div class="hero-actions">
+        <a href="#search" class="btn btn-primary">探索商品</a>
+        <a href="#featured" class="btn btn-outline">熱門推薦</a>
+      </div>
+      <div class="stats">
+        <div><strong>2,400+</strong><span>精選商品</span></div>
+        <div><strong>98%</strong><span>顧客滿意度</span></div>
+        <div><strong>72h</strong><span>快速出貨</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>瀏覽分類</h2>
+        <span class="muted">找到你的完美裝備</span>
+      </div>
+      <div class="grid grid-4">
+        <article class="card category"><h3>筆記型電腦</h3><p>84 件商品</p></article>
+        <article class="card category"><h3>智慧手機</h3><p>126 件商品</p></article>
+        <article class="card category"><h3>耳機音響</h3><p>203 件商品</p></article>
+        <article class="card category"><h3>穿戴裝置</h3><p>57 件商品</p></article>
+      </div>
+    </section>
+
+    <section id="featured" class="section">
+      <div class="section-head">
+        <h2>本週熱銷</h2>
+        <a href="#search" class="muted">查看全部</a>
+      </div>
+      <div class="grid grid-3">
+        <article class="card product">
+          <span class="badge ghost">SONY</span>
+          <h3>WH-1000XM6</h3>
+          <p>業界頂尖降噪技術，30 小時續航</p>
+          <strong>NT$9,990</strong>
+        </article>
+        <article class="card product accent">
+          <span class="badge">NEW SALE</span>
+          <h3>APPLE MacBook Air M4</h3>
+          <p>超薄輕便，全天候電力續航</p>
+          <strong>NT$36,900</strong>
+        </article>
+        <article class="card product">
+          <span class="badge ghost">SAMSUNG</span>
+          <h3>Galaxy S25 Ultra</h3>
+          <p>200MP 相機，內建 AI 助理</p>
+          <strong>NT$43,900</strong>
+        </article>
+      </div>
+    </section>
+
+    <section id="search" class="section">
+      <div class="section-head">
+        <h2>搜尋耳機商品</h2>
+        <span class="muted">pgvector 語意檢索</span>
+      </div>
+      <form id="search-form" class="searchbar">
+        <input id="q" type="text" value="wireless earbuds" placeholder="例如：noise canceling headphones" />
+        <button class="btn btn-primary" type="submit">搜尋</button>
+      </form>
+      <div id="results" class="results"></div>
+    </section>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
